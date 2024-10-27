@@ -54,3 +54,4 @@
 2. 백엔드 배포 `Heroku`
 3. 프론트엔드 배포 `Netlify`
 
+[shopping-mall](https://tangerine-sfogliatella-fb14d3.netlify.app/)
