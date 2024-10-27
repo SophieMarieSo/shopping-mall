@@ -1,5 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const authController = {};
 
 authController.loginWithEmail = async (req, res) => {
@@ -14,6 +16,21 @@ authController.loginWithEmail = async (req, res) => {
       }
     }
     throw new Error('invalid email or password');
+  } catch (error) {
+    res.status(400).json({ status: 'fail', error: error.message });
+  }
+};
+
+authController.authenticate = async (req, res, next) => {
+  try {
+    const tokenString = req.header.authorization;
+    if (!tokenString) throw new Error('Token is not found');
+    const token = tokenString.replace('Bearer ', '');
+    jwt.verify(token, process.env.JWT_SECRET_KEY, (error, payload) => {
+      if (error) throw new Error('invalid token');
+      req.userId = payload._id;
+      next();
+    });
   } catch (error) {
     res.status(400).json({ status: 'fail', error: error.message });
   }
