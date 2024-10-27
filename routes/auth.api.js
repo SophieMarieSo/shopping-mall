@@ -3,6 +3,6 @@ const router = express.Router();
 const authController = require('../controllers/auth.controller');
 
 // 회원가입
-router.post('/', authController.loginWithEmail);
+router.post('/login', authController.loginWithEmail);
 
 module.exports = router;
