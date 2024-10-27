@@ -23,7 +23,7 @@ authController.loginWithEmail = async (req, res) => {
 
 authController.authenticate = async (req, res, next) => {
   try {
-    const tokenString = req.header.authorization;
+    const tokenString = req.headers.authorization;
     if (!tokenString) throw new Error('Token is not found');
     const token = tokenString.replace('Bearer ', '');
     jwt.verify(token, process.env.JWT_SECRET_KEY, (error, payload) => {
