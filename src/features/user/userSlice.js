@@ -59,12 +59,6 @@ export const registerUser = createAsyncThunk(
 
       return resp.data.data;
     } catch (error) {
-      dispatch(
-        showToastMessage({
-          message: '회원가입에 실패했습니다',
-          status: 'error',
-        })
-      );
       return rejectWithValue(error.error);
     }
   }
