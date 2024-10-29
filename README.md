@@ -36,9 +36,9 @@
 
 ### 사용스택 (package 포함)
 
-백엔드 `Express` `Mongoose` `Cors` `BodyParser` `dotenv` `bcrpty` `jsonwebtoken`
+백엔드 `Express` `Mongoose` `Cors` `BodyParser` `dotenv` `bcrptyjs` `jsonwebtoken`
 
-프론트엔드 `React` `Axios`
+프론트엔드 `React` `Axios` `Cloudinary` `Redux-toolkit` `react-bootstrap`
 
 ---
 
