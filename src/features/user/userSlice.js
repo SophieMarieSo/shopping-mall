@@ -12,13 +12,7 @@ export const loginWithEmail = createAsyncThunk(
       sessionStorage.setItem('token', resp.data.token);
       return resp.data;
     } catch (error) {
-      dispatch(
-        showToastMessage({
-          message: '로그인에 실패했습니다',
-          status: 'error',
-        })
-      );
-      return rejectWithValue;
+      return rejectWithValue(error.error);
     }
   }
 );
