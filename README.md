@@ -48,6 +48,12 @@
 
 ---
 
+### frontend
+
+clone https://github.com/legobitna/noona-shopping-mall-redux-toolkit-student
+
+---
+
 ### 배포
 
 1. DB 배포 `MongonDB Atlas`
