@@ -16,7 +16,8 @@ const AdminProductPage = () => {
   const navigate = useNavigate();
   const [query] = useSearchParams();
   const dispatch = useDispatch();
-  const { productList, totalPageNum } = useSelector((state) => state.product);
+  // const { productList, totalPageNum } = useSelector((state) => state.product);
+  const productList = useSelector((state) => state.product.productList);
   const [showDialog, setShowDialog] = useState(false);
   const [searchQuery, setSearchQuery] = useState({
     page: query.get('page') || 1,
