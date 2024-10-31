@@ -6,9 +6,6 @@ const cors = require('cors');
 const app = express();
 
 require('dotenv').config();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json()); // req.body가 객체로 인식된다
-
 const corsOptions = {
   origin: 'http://localhost:3000', // 허용할 클라이언트 URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // 허용할 HTTP 메서드
@@ -16,6 +13,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // req.body가 객체로 인식된다
+
 app.use('/api', indexRouter);
 
 const mongoURI = process.env.MONGODB_URI_PROD;
