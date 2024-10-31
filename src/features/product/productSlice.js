@@ -12,7 +12,7 @@ export const getProductList = createAsyncThunk(
       console.log('====================================');
       console.log(resp);
       console.log('====================================');
-      return resp.data.product;
+      return resp.data.data;
     } catch (error) {
       return rejectWithValue(error.error);
     }
